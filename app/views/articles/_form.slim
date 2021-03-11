@@ -1,0 +1,12 @@
+= render "shared/errors", obj: obj
+= form_for obj, url: path do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control"
+  .form-group
+    = f.label :topic
+    = f.select :topic_id, options_for_select(@topics.map{|t| [t.name, t.id]}), {}, class: "form-control"
+  = f.submit class: "btn btn-success btn-sm"

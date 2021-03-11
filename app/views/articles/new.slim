@@ -1,0 +1,5 @@
+main.container(role='main')
+  .row.mt-5
+    .col-md-8.mx-auto
+      h1.mb-5.text-center Create an article
+      = render 'articles/form', obj: @article, path: articles_path

@@ -9,6 +9,8 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark
           = link_to "Home", root_path, class: "nav-link"
         li.nav-item
           a.nav-link(href='#') Profile
+        li.nav-item 
+          = link_to "Create an Article", new_article_path, class: "nav-link"
         li.nav-item
           = link_to "Logout", destroy_user_session_path, class: "nav-link", data: {:confirm => 'Are you sure?'}, method: :delete
       - else 
