@@ -23,8 +23,5 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark
         button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
 .nav-scroller.bg-white.shadow-sm
   nav.nav.nav-underline
-    a.nav-link(href='#') Link
-    a.nav-link(href='#') Link
-    a.nav-link(href='#') Link
-    a.nav-link(href='#') Link
-    a.nav-link(href='#') Link
+    = @topics.each do |topic|
+      = link_to topic.name, topic_path(topic), class: "nav-link"
