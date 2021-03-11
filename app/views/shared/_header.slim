@@ -1,0 +1,30 @@
+nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark
+  = link_to "RAILS FORUM", root_path, class: "navbar-brand mr-auto mr-lg-0"
+  button.navbar-toggler.p-0.border-0(type='button' data-toggle='offcanvas')
+    span.navbar-toggler-icon
+  #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
+    ul.navbar-nav.mr-auto
+      - if user_signed_in?
+        li.nav-item.active
+          = link_to "Home", root_path, class: "nav-link"
+        li.nav-item
+          a.nav-link(href='#') Profile
+        li.nav-item
+          = link_to "Logout", destroy_user_session_path, class: "nav-link", data: {:confirm => 'Are you sure?'}, method: :delete
+      - else 
+        li.nav-item.dropdown
+          a#dropdown01.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Login or Register
+          .dropdown-menu(aria-labelledby='dropdown01')
+            = link_to "Login", new_user_session_path, class: "dropdown-item"
+            = link_to "Register", new_user_registration_path, class: "dropdown-item"
+    - if user_signed_in?
+      form.form-inline.my-2.my-lg-0
+        input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+.nav-scroller.bg-white.shadow-sm
+  nav.nav.nav-underline
+    a.nav-link(href='#') Link
+    a.nav-link(href='#') Link
+    a.nav-link(href='#') Link
+    a.nav-link(href='#') Link
+    a.nav-link(href='#') Link
