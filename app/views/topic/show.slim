@@ -1,1 +1,6 @@
-= @topic.name
+main.container(role='main')
+  .d-flex.align-items-center.p-3.my-3.text-white-50.bg-purple.rounded.shadow-sm
+    .lh-100
+      h6.mb-0.text-white.lh-100 Rails Forum
+      small Since 2021
+  = render 'articles/article', obj: @topic

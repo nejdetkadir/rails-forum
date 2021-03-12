@@ -1,0 +1,11 @@
+.my-3.p-3.bg-white.rounded.shadow-sm
+  h6.border-bottom.border-gray.pb-2.mb-0
+    = obj.name
+  - obj.articles.each do |article|
+    .media.text-muted.pt-3
+      p.media-body.pb-3.mb-0.small.lh-125.border-bottom.border-gray
+        = link_to article.title, article_path(article)
+        strong.d-block.text-gray-dark  
+        = article.body
+  small.d-block.text-right.mt-3
+    = link_to "Show All", articles_path
