@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   
   resources :topic, only: [:show]
+  resources :comments
   resources :articles
 
   devise_for :users
